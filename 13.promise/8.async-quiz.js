@@ -15,11 +15,26 @@ async function makeFriedEgg() {
   let chicken;
   try {
     chicken = await getChicken();
-  } catch {
-    chicken = '🐔';
+  } catch (error) {
+    chicken = '🐓'
   }
   const egg = await fetchEgg(chicken);
-  return fryEgg(egg);
+  return fryEgg(egg); 
 }
 
 makeFriedEgg().then(console.log);
+
+
+
+// async function makeFriedEgg() {
+//   let chicken;
+//   try {
+//     chicken = await getChicken();
+//   } catch {
+//     chicken = '🐔';
+//   }
+//   const egg = await fetchEgg(chicken);
+//   return fryEgg(egg);
+// }
+
+// makeFriedEgg().then(console.log);

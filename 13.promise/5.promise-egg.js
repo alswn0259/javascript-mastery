@@ -1,4 +1,5 @@
 function fetchEgg(chicken) {
+ // Promise의 static 함수(resolve, reject 등..)로 바로 사용할 수 있음
   return Promise.resolve(`${chicken} => 🥚`);
 }
 
@@ -11,6 +12,8 @@ function getChicken() {
   //return Promise.resolve(`🪴 => 🐓`);
 }
 
+// error가 발생했을 때 적절한 처리를 어디서 하느냐에 따라서
+// channing 안에서도 적절한 처리 가능해서 성공적으로 진행가능
 getChicken()
   .catch(() => '🐔')
   .then(fetchEgg)
